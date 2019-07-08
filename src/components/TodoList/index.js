@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
+
 import TodoListsActions from '~/store/ducks/todolists';
 import AddTodoItemForm from '~/components/AddTodoItemForm';
 
@@ -24,9 +26,22 @@ const TodoList = ({ todoList, setItemFinishedRequest }) => (
   </Container>
 );
 
-const mapStateToProps = state => ({
-  todolists: state.todolists,
-});
+TodoList.propTypes = {
+  todoList: PropTypes.shape({
+    name: PropTypes.string,
+    _id: PropTypes.string,
+    items: PropTypes.arrayOf(PropTypes.shape({
+      _id: PropTypes.string,
+      name: PropTypes.string,
+      isFinished: PropTypes.bool,
+    })),
+  }).isRequired,
+  setItemFinishedRequest: PropTypes.func.isRequired,
+};
+
+// const mapStateToProps = state => ({
+//   todolists: state.todolists,
+// });
 
 const mapDispatchToProps = dispatch => bindActionCreators(TodoListsActions, dispatch);
 

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
+
 import TodoListsActions from '~/store/ducks/todolists';
 
 import {
@@ -16,6 +18,11 @@ import {
 } from './styles';
 
 class AddTodoListsForm extends Component {
+  static propTypes = {
+    todoListID: PropTypes.number.isRequired,
+    addTodoitemRequest: PropTypes.func.isRequired,
+  }
+
   state = {
     addListVisible: false,
     addListInput: '',

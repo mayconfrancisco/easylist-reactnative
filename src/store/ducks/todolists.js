@@ -69,7 +69,7 @@ export const reducer = createReducer(INITIAL_STATE, {
     const newItems = [...outhresItems, newItem];
     const newList = { ...state.data[todoListIDX], items: newItems };
 
-    return state.merge({ loading: false, data: [...othersLists, newList] });
-  }, // TODO #1
+    return state.merge({ loading: false, data: [...othersLists, newList] }); // TODO #1
+  },
 
 });

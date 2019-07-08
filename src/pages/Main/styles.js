@@ -8,7 +8,6 @@ export const Container = styled.View`
 
 export const WrapContent = styled.View`
   flex: 1;
-  /* padding-left: ${metrics.basePadding}px; */
   padding-bottom: ${metrics.basePadding}px;
 `;
 

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
+
 import TodoListsActions from '~/store/ducks/todolists';
 
 import Header from '~/components/Header';
@@ -13,6 +15,14 @@ import {
 } from './styles';
 
 class Main extends Component {
+  static propTypes = {
+    getTodolistsRequest: PropTypes.func.isRequired,
+    todolists: PropTypes.shape({
+      data: PropTypes.array,
+      loading: PropTypes.bool,
+    }).isRequired,
+  }
+
   componentDidMount() {
     const { getTodolistsRequest } = this.props;
     getTodolistsRequest();
@@ -32,7 +42,7 @@ class Main extends Component {
               data={data}
               keyExtractor={list => String(list._id)}
               renderItem={({ item: todoList }) => <TodoList todoList={todoList} />}
-              ListFooterComponent={() => <AddTodoListsForm /> }
+              ListFooterComponent={() => <AddTodoListsForm />}
             />
           )}
         </WrapContent>

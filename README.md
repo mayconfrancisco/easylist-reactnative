@@ -51,6 +51,9 @@ _Para iniciar a aplicação - Emuladores ou Aparelhos em modo debug USB são nec
 ### Seria bom:
 
 Refatorar os componentes de AddList e AddItem
+
 Add loadings específicos para AddList, AddItem - tornará a interface mais coerente
+
 Verificar melhor o funcionamento do Seamless com aquela estrutura de estado definida para o TodoLists no App - Tivemos problemas com Update, UpdateIn, Set e SetIn
+
 Adicionar esses itens na ISSUES do gerenciador de Repo ;)
