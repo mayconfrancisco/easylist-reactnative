@@ -19,7 +19,7 @@ import {
 
 class AddTodoListsForm extends Component {
   static propTypes = {
-    todoListID: PropTypes.number.isRequired,
+    todoListID: PropTypes.string.isRequired,
     addTodoitemRequest: PropTypes.func.isRequired,
   }
 
